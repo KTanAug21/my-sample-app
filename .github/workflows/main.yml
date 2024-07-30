@@ -11,5 +11,7 @@ jobs:
         contents: write
       steps:
         - uses: actions/checkout@v2
+        - run: echo "$FLY_API_TOKEN"
         - run: unzip .fly/.fly_ 
         - run: .fly/flyctl.exe deploy --depot
+        - run: .fly/flyctl.exe machines run --build-depot .
