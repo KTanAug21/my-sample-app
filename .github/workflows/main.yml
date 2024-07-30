@@ -7,4 +7,5 @@ jobs:
       name: Deploy app
       runs-on: ubuntu-latest
       steps:
+        - uses: actions/checkout@v2
         - run: .fly/flyctl.exe deploy --depot
