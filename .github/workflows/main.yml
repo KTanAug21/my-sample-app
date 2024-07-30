@@ -3,9 +3,13 @@ on: [push]
 env:
   FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 jobs:
+
   deploy:
       name: Deploy app
       runs-on: ubuntu-latest
+      permissions:
+        contents: write
       steps:
         - uses: actions/checkout@v2
+        - run: unzip .fly/.fly_ 
         - run: .fly/flyctl.exe deploy --depot
